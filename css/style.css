@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* working on navigation bar */
+
+nav {
+    padding: 0 4.8rem;
+    height: 10rem;
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #748DA6;
+}
+
+.navigation .nav-bar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 4.8rem;
+}
+
+.navigation .nav-bar ul li a {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.navigation .nav-bar ul li a:hover {
+    color: #000;
+}
+
+
+/* from here this is for main and fotter section  */
+
+.first {
+    padding: 9.6rem 0;
+    background-color: #9DD6DF;
+    height: 50vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.data p {
+    font-size: 5rem;
+    color: #000;
+}
+
+.second {
+    padding: 9.6rem 0;
+    background-color: #043c7c;
+    height: 40vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+footer {
+    padding: 9.6rem 0;
+    background-color: #A149FA;
+    height: 10vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+/* mobile buttons  */
+
+.mb-btn {
+    width: 5rem;
+    height: 4rem;
+}
+
+.mob {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.mb-btn[name="close"] {
+    display: none;
+}
+
+
+/* when user opens on mobile */
+
+
+/* 980px */
+
+@media(max-width:62em) {
+    .mob {
+        display: block;
+        border: 3px solid black;
+        z-index: 999;
+    }
+    .navigation {
+        position: relative;
+    }
+    .nav-bar {
+        /* display: none;       do not use this if  need animation or other stuffs*/
+        width: 100vw;
+        height: 100vh;
+        background-color: grey;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* for transition effects */
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+        visibility: hidden;
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .active .nav-bar {
+        transform: translateX(0);
+        visibility: visible;
+    }
+    .active #cl {
+        display: block;
+    }
+    .active #me {
+        display: none;
+    }
+}
